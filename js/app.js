@@ -144,6 +144,7 @@ function makeBars(){
     context.beginPath()
     context.fillText(title, topLabelx, topLabely);
     context.textAlign = "start";
+    
     for(var i=0; i < segment.length; i++){
         var pct = segment[i].value/ total;
         var barHeight = (chartHeight * pct);
