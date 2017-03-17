@@ -1,12 +1,12 @@
 /*****************************************************************
-File: main.js
+File: app.js
 Author: Michel Toutain
 Description: Canvas Charts Assignment
 Here is the sequence of logic for the app
     - Loading JSON through a dynamically created Script Tag.
     - Both Canvas 400px by 400px. 
     - The first Canvas element displays the data as a Pie Chart
-        - Segments have the same radius, except largest(120% of the standard) and smallest (80% of the standard). 
+    - Segments have the same radius, except largest(120% of the standard) and smallest (80% of the standard). 
     - The second Canvas elements displays the data as a BAR Chart 
    
 Version: 1.0.0
@@ -25,6 +25,7 @@ function getData(){
 }
 function makePie(){
     console.log(data);
+  
     
     var chart = document.getElementById("chart");
     var context = chart.getContext("2d");
@@ -47,6 +48,15 @@ function makePie(){
         }
         total += segments[i].value;
     }
+    
+//set title for chart
+    var title = data.label;
+    //console.log(title);
+    var topLabelx = chart.width/2;
+    var topLabely = 15;
+    context.textAlign = "center";
+    context.beginPath()
+    context.fillText(title, topLabelx, topLabely);
     
     for(var i = 0; i < segments.length; i++){
         
@@ -126,7 +136,14 @@ function makeBars(){
        }
        total += segment[i].value;
    }
-    
+    var title = data.label;
+    //console.log(title);
+    var topLabelx = chart.width/2;
+    var topLabely = 15;
+    context.textAlign = "center";
+    context.beginPath()
+    context.fillText(title, topLabelx, topLabely);
+    context.textAlign = "start";
     for(var i=0; i < segment.length; i++){
         var pct = segment[i].value/ total;
         var barHeight = (chartHeight * pct);
