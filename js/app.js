@@ -49,6 +49,9 @@ function makePie(){
         total += segments[i].value;
     }
     
+//draw chart background
+    context.fillStyle = "#444";
+    context.fillRect(0, 0, chart.width, chart.height);
 //set title for chart
     var title = data.label;
     //console.log(title);
@@ -136,6 +139,10 @@ function makeBars(){
        }
        total += segment[i].value;
    }
+    
+//draw chart background
+    context.fillStyle = "#444";
+    context.fillRect(0, 0, chart2.width, chart2.height);
     var title = data.label;
     //console.log(title);
     var topLabelx = chart.width/2;
@@ -168,17 +175,8 @@ function makeBars(){
     //move the x value for the next point
     x = x + barWidth + spaceBetweenPoints;	
     
-  
-  
   context.stroke();	//draw lines around bars
   context.fill(); 	//fill colours inside the bars
   
-  //context.strokeStyle = "#999";
-  //context.lineWidth = 1;
-//  context.beginPath();
-//  context.moveTo(offSetX, chart2.height-chartHeight);
-//  context.lineTo(offSetX, chartHeight);
-//  context.lineTo(chart2.width-offSetX, chartHeight);
-//  context.stroke(); 
     }
     }
