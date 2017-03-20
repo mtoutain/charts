@@ -57,6 +57,7 @@ function makePie(){
     //console.log(title);
     var topLabelx = chart.width/2;
     var topLabely = 15;
+    context.fillStyle = "#fff";
     context.textAlign = "center";
     context.beginPath()
     context.fillText(title, topLabelx, topLabely);
@@ -147,6 +148,7 @@ function makeBars(){
     //console.log(title);
     var topLabelx = chart.width/2;
     var topLabely = 15;
+    context.fillStyle = "#fff";
     context.textAlign = "center";
     context.beginPath()
     context.fillText(title, topLabelx, topLabely);
